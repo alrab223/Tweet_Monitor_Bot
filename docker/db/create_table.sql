@@ -6,6 +6,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 USE bot;
 
+CREATE TABLE IF NOT EXISTS `flag_control` (
+  `flag_name` text DEFAULT NULL,
+  `flag` tinyint(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*!40000 ALTER TABLE `flag_control` DISABLE KEYS */;
+INSERT INTO `flag_control` (`flag_name`, `flag`) VALUES
+	('tweet_get', 0);
+/*!40000 ALTER TABLE `flag_control` ENABLE KEYS */;
+
 CREATE TABLE IF NOT EXISTS `Twitter_log` (
   `tweet_id` text DEFAULT NULL,
   `screen_id` text DEFAULT NULL,
@@ -17,6 +27,9 @@ CREATE TABLE IF NOT EXISTS `Twitter_log` (
   `media3` text DEFAULT NULL,
   `media4` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*!40000 ALTER TABLE `Twitter_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Twitter_log` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
